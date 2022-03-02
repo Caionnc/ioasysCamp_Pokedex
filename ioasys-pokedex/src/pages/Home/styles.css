@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 body {
-  padding: 0;
+  padding-left: 311px;
+  padding-right: 311px;
   margin: 0;
 
   box-sizing: border-box;
@@ -20,4 +22,87 @@ body {
   top: 0px;
 
   background: #ec0344;
+}
+.home-title-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+
+  margin-top: 60px;
+}
+.home-title-bar-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+  white-space: nowrap;
+  /* identical to box height, or 114% */
+
+  color: #ec0344;
+  margin-right: auto;
+}
+.home-title-bar-logo {
+  margin-right: 12px;
+}
+.home-search-bar-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 72px;
+
+  width: 100%;
+}
+.home-search-bar {
+  width: 630px;
+  height: 54px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  white-space: nowrap;
+
+  color: #ec0344;
+  border: 2px solid #ec0344;
+  border-radius: 4px;
+
+  padding-left: 10px;
+}
+.home-search-bar:focus,
+.home-search-bar:active {
+  border-color: #ec0344;
+}
+
+.home-search-bar-favourite-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: transparent;
+  border: 0px solid;
+}
+.home-search-bar-favourites {
+  display: flex;
+  flex-direction: row;
+}
+.home-search-bar-favourite-icon {
+  margin-left: 64px;
+}
+.home-search-bar-favourite-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  white-space: nowrap;
+
+  color: #ec0344;
+
+  margin-left: 11px;
+}
+.home-pokemons-container{
+  
 }
