@@ -1,0 +1,83 @@
+.pokemon-chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  position: absolute;
+  width: 150px;
+  height: 147.1px;
+
+  margin-left: 10px;
+  margin-top: 10px;
+
+  /* White */
+
+  background: #ffffff;
+  /* Type - Grass */
+
+  border: 1.31068px solid #74cb48;
+  box-sizing: border-box;
+  border-radius: 10.4854px;
+}
+
+.pokemon-chart-id {
+  width: 129.03px;
+  height: 16px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10.4854px;
+  line-height: 16px;
+  /* identical to box height, or 150% */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: right;
+  justify-content: flex-end;
+
+  /* Type - Grass */
+
+  color: #74cb48;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+  margin: 0px 0px;
+}
+
+.pokemon-chart-text {
+  width: 100%;
+  height: 21px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13.1068px;
+  line-height: 21px;
+  /* identical to box height, or 160% */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  /* White */
+
+  color: #ffffff;
+  background-color: #74cb48;
+  border: 1.31068px solid #74cb48;
+  box-sizing: border-box;
+  border-radius: 0px 0px 8.4854px 8.4854px;
+}
+.pokemon-chart-img {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+}

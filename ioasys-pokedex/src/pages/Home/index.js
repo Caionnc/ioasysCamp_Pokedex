@@ -3,14 +3,15 @@ import React from "react";
 
 import { redIoasysLogo, redHeart, redBloom } from "../../assets/";
 
-import { ToggleSwitch } from "../../components";
+import { ToggleSwitch, PokemonChart } from "../../components";
 
 import "./styles.css";
 
 function Home() {
-
-  function fetchPokemons(){
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=151%27').then(response => response.json()).then(allpokemon => console.log(allpokemon))
+  function fetchPokemons() {
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=151%27")
+      .then((response) => response.json())
+      .then((allpokemon) => console.log(allpokemon));
   }
   return (
     <div className="container">
@@ -21,8 +22,7 @@ function Home() {
         <ToggleSwitch label={"Theme Switcher"}></ToggleSwitch>
       </div>
       <div className="home-search-bar-container">
-        <input className="home-search-bar" placeholder="Buscar">
-        </input>
+        <input className="home-search-bar" placeholder="Buscar"></input>
         <button
           className="home-search-bar-favourite-button"
           type="button"
@@ -35,7 +35,7 @@ function Home() {
         </button>
       </div>
       <div className="home-pokemons-container">
-
+        <PokemonChart></PokemonChart>
       </div>
     </div>
   );

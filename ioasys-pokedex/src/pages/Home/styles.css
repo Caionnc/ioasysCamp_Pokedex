@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 body {
-  padding-left: 311px;
-  padding-right: 311px;
   margin: 0;
-
   box-sizing: border-box;
   text-decoration: none;
 
@@ -13,6 +10,10 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
+  padding-left: 20%;
+  padding-right: 20%;
 }
 .home-header {
   position: absolute;
@@ -83,6 +84,8 @@ body {
 
   background-color: transparent;
   border: 0px solid;
+
+  cursor: pointer;
 }
 .home-search-bar-favourites {
   display: flex;
@@ -103,6 +106,14 @@ body {
 
   margin-left: 11px;
 }
-.home-pokemons-container{
-  
+.home-pokemons-container {
+  display: flex;
+  flex-direction: row;
+
+  border: 1px solid #ec0344;
+
+  min-height: 500px;
+
+  margin-top: 71px;
 }
+
