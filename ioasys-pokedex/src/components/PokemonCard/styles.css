@@ -1,4 +1,4 @@
-.pokemon-chart-container {
+.pokemon-card-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -21,7 +21,7 @@
   border-radius: 10.4854px;
 }
 
-.pokemon-chart-id {
+.pokemon-card-id {
   width: 129.03px;
   height: 16px;
 
@@ -50,7 +50,7 @@
   margin: 0px 0px;
 }
 
-.pokemon-chart-text {
+.pokemon-card-text {
   width: 100%;
   height: 21px;
   font-family: Poppins;
@@ -74,7 +74,7 @@
   box-sizing: border-box;
   border-radius: 0px 0px 8.4854px 8.4854px;
 }
-.pokemon-chart-img {
+.pokemon-card-img {
   display: flex;
   flex-direction: row;
   align-self: center;

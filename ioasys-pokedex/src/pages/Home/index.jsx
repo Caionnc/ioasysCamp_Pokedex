@@ -1,18 +1,21 @@
 import { Strings } from "./strings";
 import React from "react";
 
-import { redIoasysLogo, redHeart, redBloom } from "../../assets/";
+import { redIoasysLogo, redHeart, redBloom } from "../../assets";
 
-import { ToggleSwitch, PokemonChart } from "../../components";
+import { ToggleSwitch, PokemonChart, PokemonCard } from "../../components";
+
+import api from "../../services/api"
 
 import "./styles.css";
 
 function Home() {
-  function fetchPokemons() {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=151%27")
-      .then((response) => response.json())
-      .then((allpokemon) => console.log(allpokemon));
-  }
+  // function fetchPokemons() {
+  //   fetch("https://pokeapi.co/api/v2/pokemon?limit=151%27")
+  //     .then((response) => response.json())
+  //     .then((allpokemon) => console.log(allpokemon));
+  // }
+
   return (
     <div className="container">
       <header className="home-header"></header>
@@ -26,7 +29,7 @@ function Home() {
         <button
           className="home-search-bar-favourite-button"
           type="button"
-          onClick={fetchPokemons}
+          onClick={console.log("Hello")}
         >
           <img className="home-search-bar-favourite-icon" src={redHeart}></img>
           <span className="home-search-bar-favourite-text">
@@ -35,7 +38,7 @@ function Home() {
         </button>
       </div>
       <div className="home-pokemons-container">
-        <PokemonChart></PokemonChart>
+        <PokemonCard></PokemonCard>
       </div>
     </div>
   );
