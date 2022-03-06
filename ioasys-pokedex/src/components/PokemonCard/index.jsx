@@ -5,16 +5,16 @@ import "./styles.css";
 import api from "../../services/api";
 
 const PokemonCard = () => {
-  const [id, setPokemonId] = useState(0);
-  const [pokemonImage, setPokemonImage] = useState(0);
-  const [pokemonName, setPokemonName] = useState(0);
-  const [pokemonType, setPokemonType] = useState(0);
+  const [PokemonId, setPokemonId] = useState(0);
+  const [pokemonImage, setPokemonImage] = useState("");
+  const [pokemonName, setPokemonName] = useState("");
+  const [pokemonType, setPokemonType] = useState("");
 
   return (
     /*Pokemon Card Copy is only for testing purposes*/
     <div className="pokemon-card-container">
       <div className="pokemon-card-id">
-        <span>{id}</span>
+        <span>{PokemonId}</span>
       </div>
       <div className="pokemon-card-img ">
         <img src={pokemonImage}></img>

@@ -1,11 +1,11 @@
 import { Strings } from "./strings";
-import React from "react";
-
+import React, { useState, useEffect } from "react";
 import { redIoasysLogo, redHeart, redBloom } from "../../assets";
 
 import { ToggleSwitch, PokemonChart, PokemonCard } from "../../components";
 
-import api from "../../services/api"
+import axios from "axios";
+import AllPokemons from "../../services/api";
 
 import "./styles.css";
 
@@ -15,6 +15,15 @@ function Home() {
   //     .then((response) => response.json())
   //     .then((allpokemon) => console.log(allpokemon));
   // }
+
+  const [pokemonsArrayList, setPokemonArrayList] = useState([]);
+  const pokemonsList = AllPokemons();
+
+  useEffect(() => {
+    setPokemonArrayList(AllPokemons());
+    console.log(pokemonsArrayList);
+    console.log(pokemonsList);
+  }, [setPokemonArrayList]);
 
   return (
     <div className="container">
@@ -29,7 +38,7 @@ function Home() {
         <button
           className="home-search-bar-favourite-button"
           type="button"
-          onClick={console.log("Hello")}
+          onClick={console.log("Hello" + "${pokemonsArrayList[0]}")}
         >
           <img className="home-search-bar-favourite-icon" src={redHeart}></img>
           <span className="home-search-bar-favourite-text">

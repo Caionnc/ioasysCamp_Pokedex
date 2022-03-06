@@ -4,11 +4,14 @@ const api = axios.create({
   baseURL: "https://pokeapi.co/api/v2/pokemon",
 });
 
-// export async function getPokemon(){
-//     const response = await api.get('/')
-//     .then((response) => doSomething(response.data))
-//     .catch((err) => {console.error("Ops! Ocorreu um erro" + err)})
-// }
+export async function AllPokemons() {
+  const response = await api
+    .get("/https://pokeapi.co/api/v2/pokemon?limit=100%27")
+    .then((response) => response.data)
+    .catch((err) => {
+      console.error("Ops! Ocorreu um erro" + err);
+    });
+}
 
 export async function getPokemonId(id) {
   const response = await api
