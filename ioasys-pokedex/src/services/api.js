@@ -4,9 +4,9 @@ const api = axios.create({
   baseURL: "https://pokeapi.co/api/v2/pokemon",
 });
 
-export async function AllPokemons() {
+export async function getAllPokemons() {
   const response = await api
-    .get("/https://pokeapi.co/api/v2/pokemon?limit=100%27")
+    .get("/https://pokeapi.co/api/v2/pokemon?limit=151%27")
     .then((response) => response.data)
     .catch((err) => {
       console.error("Ops! Ocorreu um erro" + err);

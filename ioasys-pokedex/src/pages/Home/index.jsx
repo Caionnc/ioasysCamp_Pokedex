@@ -5,7 +5,7 @@ import { redIoasysLogo, redHeart, redBloom } from "../../assets";
 import { ToggleSwitch, PokemonChart, PokemonCard } from "../../components";
 
 import axios from "axios";
-import AllPokemons from "../../services/api";
+import getAllPokemons from "../../services/api";
 
 import "./styles.css";
 
@@ -16,14 +16,17 @@ function Home() {
   //     .then((allpokemon) => console.log(allpokemon));
   // }
 
-  const [pokemonsArrayList, setPokemonArrayList] = useState([]);
-  const pokemonsList = AllPokemons();
+  const [allPokemonsList, setAllPokemonsList] = useState([]);
+  //const [loadMore, setLoadMore] = useState(""https://pokeapi.co/api/v2/pokemon?offset=20&limit=20"");
+  const pokemons = getAllPokemons();
 
   useEffect(() => {
-    setPokemonArrayList(AllPokemons());
-    console.log(pokemonsArrayList);
-    console.log(pokemonsList);
-  }, [setPokemonArrayList]);
+    // console.log(pokemons);
+    // setPokemonArrayList(pokemons);
+    // console.log(pokemonsArrayList);
+    getAllPokemons();
+    console.log(getAllPokemons());
+  }, []);
 
   return (
     <div className="container">
@@ -38,7 +41,7 @@ function Home() {
         <button
           className="home-search-bar-favourite-button"
           type="button"
-          onClick={console.log("Hello" + "${pokemonsArrayList[0]}")}
+          onClick={console.log("Teste")}
         >
           <img className="home-search-bar-favourite-icon" src={redHeart}></img>
           <span className="home-search-bar-favourite-text">
@@ -47,7 +50,7 @@ function Home() {
         </button>
       </div>
       <div className="home-pokemons-container">
-        <PokemonCard></PokemonCard>
+        <PokemonCard setPokemonId={""}></PokemonCard>
       </div>
     </div>
   );
