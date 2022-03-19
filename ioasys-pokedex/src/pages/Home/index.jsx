@@ -5,27 +5,22 @@ import { redIoasysLogo, redHeart, redBloom } from "../../assets";
 import { ToggleSwitch, PokemonChart, PokemonCard } from "../../components";
 
 import axios from "axios";
-import getAllPokemons from "../../services/api";
+import {getAllPokemons, getAllPokemonsAndPopulate} from "../../services/api";
 
 import "./styles.css";
 
 function Home() {
-  // function fetchPokemons() {
-  //   fetch("https://pokeapi.co/api/v2/pokemon?limit=151%27")
-  //     .then((response) => response.json())
-  //     .then((allpokemon) => console.log(allpokemon));
-  // }
 
   const [allPokemonsList, setAllPokemonsList] = useState([]);
   //const [loadMore, setLoadMore] = useState(""https://pokeapi.co/api/v2/pokemon?offset=20&limit=20"");
-  const pokemons = getAllPokemons();
+  //const pokemons = getAllPokemons();
 
   useEffect(() => {
     // console.log(pokemons);
     // setPokemonArrayList(pokemons);
     // console.log(pokemonsArrayList);
-    getAllPokemons();
-    console.log(getAllPokemons());
+    getAllPokemonsAndPopulate(setAllPokemonsList);
+    console.log(allPokemonsList);
   }, []);
 
   return (

@@ -2,6 +2,9 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: "https://pokeapi.co/api/v2/pokemon",
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
 export async function getAllPokemons() {
@@ -13,39 +16,26 @@ export async function getAllPokemons() {
     });
 }
 
-export async function getPokemonId(id) {
+export async function getAllPokemonsAndPopulate(pokemonList) {
+  const res = await api.get("/?limit=20");
+  const data = res;
+
   const response = await api
-    .get("/id", { id })
-    .then((response) => response.data)
+    .get("/")
+    .then((response) => {
+      //response.data;
+      function createPokemonObject(results) {
+        results.forEach(async (pokemon) => {
+          const res = await api.get("/${pokemon.name}");
+          await console.log(pokemon);
+        });
+      }
+      pokemonList((currentList) => [...currentList, data]);
+      createPokemonObject(data.results);
+    })
     .catch((err) => {
       console.error("Ops! Ocorreu um erro" + err);
     });
 }
 
-export async function getPokemonName(name) {
-  const response = await api
-    .get("/name", name)
-    .then((response) => response.data)
-    .catch((err) => {
-      console.error("Ops! Ocorreu um erro" + err);
-    });
-}
-
-export async function getPokemonImage() {
-  const response = await api
-    .get("/sprites")
-    .then((response) => response.data)
-    .catch((err) => {
-      console.error("Ops! Ocorreu um erro" + err);
-    });
-}
-
-export async function getPokemonType() {
-  const response = await api
-    .get("/type")
-    .then((response) => response.data)
-    .catch((err) => {
-      console.error("Ops! Ocorreu um erro" + err);
-    });
-}
 export default api;
